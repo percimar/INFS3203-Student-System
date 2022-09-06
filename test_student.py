@@ -31,3 +31,35 @@ class TestStudent(unittest.TestCase):
         with self.assertRaises(TypeError):
             Student("Asmar", id=1)
     
+    def test_wrong_id_type_exception(self):
+        with self.assertRaises(TypeError):
+            Student("Asmar", 23, "1")
+        
+        with self.assertRaises(TypeError):
+            Student("Asmar", 23, True)
+        
+        with self.assertRaises(TypeError):
+            Student("Asmar", 23, 1.0)
+    
+    def test_wrong_age_type_exception(self):
+        with self.assertRaises(TypeError):
+            Student("Asmar", "23", 1)
+        
+        with self.assertRaises(TypeError):
+            Student("Asmar", False, 1)
+        
+        with self.assertRaises(TypeError):
+            Student("Asmar", 23.0, 1)
+        
+    def test_wrong_name_type_exception(self):
+        with self.assertRaises(TypeError):
+            Student(True, 23, 1)
+        
+        with self.assertRaises(TypeError):
+            Student(5, 23, 1)
+        
+        with self.assertRaises(TypeError):
+            Student(['A', 's', 'm', 'a', 'r'], 23, 1)
+        
+
+    
