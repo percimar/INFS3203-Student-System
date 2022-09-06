@@ -3,43 +3,52 @@ from student import Student
 
 class TestStudent(TestCase):
     def test_id_getter(self):
+        """Checks that id getter works without error"""
         test_student = Student("Asmar", 23, 1)
 
         self.assertEqual(test_student.id, 1)
 
     
     def test_name_getter(self):
+        """Checks that name getter works without error"""
         test_student = Student("Asmar", 23, 1)
 
         self.assertEqual(test_student.name, "Asmar")
 
     
     def test_age_getter(self):
+        """Checks that age getter works without error"""
         test_student = Student("Asmar", 23, 1)
 
         self.assertEqual(test_student.age, 23)
     
     def test_negative_id_exception(self):
+        """Checks that negative id results in a TypeError"""
         with self.assertRaises(TypeError):
             Student("Asmar", 23, -1)
     
     def test_negative_age_exception(self):
+        """Checks that negative age results in a TypeError"""
         with self.assertRaises(TypeError):
             Student("Asmar", -1, 1)
 
     def test_no_id_exception(self):
+        """Checks that creating a student without an id results in a TypeError"""
         with self.assertRaises(TypeError):
             Student("Asmar", 23)
     
     def test_no_name_exception(self):
+        """Checks that creating a student without a name results in a TypeError"""
         with self.assertRaises(TypeError):
             Student(age=23, id=1)
     
     def test_no_age_exception(self):
+        """Checks that creating a student without an age results in a TypeError"""
         with self.assertRaises(TypeError):
             Student("Asmar", id=1)
     
     def test_wrong_id_type_exception(self):
+        """Checks that not having id as an integer results in a TypeError"""
         with self.assertRaises(TypeError):
             Student("Asmar", 23, "1")
         
@@ -50,6 +59,7 @@ class TestStudent(TestCase):
             Student("Asmar", 23, 1.0)
     
     def test_wrong_age_type_exception(self):
+        """Checks that not having age as an integer results in a TypeError"""
         with self.assertRaises(TypeError):
             Student("Asmar", "23", 1)
         
@@ -60,6 +70,7 @@ class TestStudent(TestCase):
             Student("Asmar", 23.0, 1)
         
     def test_wrong_name_type_exception(self):
+        """Checks that not having name as a string results in a TypeError"""
         with self.assertRaises(TypeError):
             Student(True, 23, 1)
         
