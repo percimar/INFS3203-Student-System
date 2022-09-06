@@ -6,6 +6,10 @@ class Student:
             raise TypeError("Age should be an int.")
         if type(id) != int:
             raise TypeError("ID should be an int.")
+        if age < 0:
+            raise TypeError("Age should not be negative")
+        if id < 0:
+            raise TypeError("ID should not be negative")
         self._name = name
         self._age = age
         self._id = id

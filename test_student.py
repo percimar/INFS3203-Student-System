@@ -18,6 +18,14 @@ class TestStudent(TestCase):
         test_student = Student("Asmar", 23, 1)
 
         self.assertEqual(test_student.age, 23)
+    
+    def test_negative_id_exception(self):
+        with self.assertRaises(TypeError):
+            Student("Asmar", 23, -1)
+    
+    def test_negative_age_exception(self):
+        with self.assertRaises(TypeError):
+            Student("Asmar", -1, 1)
 
     def test_no_id_exception(self):
         with self.assertRaises(TypeError):
