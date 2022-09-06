@@ -24,6 +24,3 @@ class StudentSystem:
             del self.students[id]
             return True
         return False
-
-    
-

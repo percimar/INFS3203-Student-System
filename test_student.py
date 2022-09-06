@@ -1,7 +1,7 @@
-import unittest
+from unittest import TestCase
 from student import Student
 
-class TestStudent(unittest.TestCase):
+class TestStudent(TestCase):
     def test_id_getter(self):
         test_student = Student("Asmar", 23, 1)
 
