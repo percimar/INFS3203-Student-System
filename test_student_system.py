@@ -56,12 +56,12 @@ class TestStudentSystem(TestCase):
         """
         student_system = StudentSystem()
         
-        self.assertEquals(student_system.find_student(1), None)
+        self.assertEqual(student_system.find_student(1), None)
 
         test_student = Student("Asmar", 23, 1)
         student_system.add_student(test_student)
 
-        self.assertEquals(student_system.find_student(0), None)
+        self.assertEqual(student_system.find_student(0), None)
 
     
     def test_delete_student_not_exists(self):
