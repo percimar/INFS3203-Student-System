@@ -13,7 +13,7 @@ class Student:
         self._name = name
         self._age = age
         self._id = id
-    
+
     @property
     def id(self):
         return self._id
